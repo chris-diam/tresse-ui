@@ -14,14 +14,17 @@ const Header = () => {
         {/* Desktop Header */}
         <div className="hidden md:flex justify-between items-center h-16 px-4 sm:px-6 lg:px-8">
           <nav className="flex space-x-8">
-            <a href="#" className="text-sm hover:text-gray-600">
-              HOME
+            <a href="#" className="text-sm relative group">
+              CLOTHING
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-black transform scale-x-0 transition-transform duration-200 group-hover:scale-x-100"></span>
             </a>
-            <a href="#" className="text-sm hover:text-gray-600">
+            <a href="#" className="text-sm relative group">
               ESSENTIALS
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-black transform scale-x-0 transition-transform duration-200 group-hover:scale-x-100"></span>
             </a>
-            <a href="#" className="text-sm hover:text-gray-600">
-              WEARABLE
+            <a href="#" className="text-sm relative group">
+              ATHLETICS
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-black transform scale-x-0 transition-transform duration-200 group-hover:scale-x-100"></span>
             </a>
           </nav>
 
@@ -60,14 +63,17 @@ const Header = () => {
           {isMobileMenuOpen && (
             <div className="px-4 py-2 bg-white border-t border-gray-200">
               <nav className="flex flex-col space-y-4 pb-4">
-                <a href="#" className="text-sm hover:text-gray-600">
-                  HOME
+                <a href="#" className="text-sm relative group inline-block">
+                  CLOTHING
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-black transform scale-x-0 transition-transform duration-200 group-hover:scale-x-100"></span>
                 </a>
-                <a href="#" className="text-sm hover:text-gray-600">
+                <a href="#" className="text-sm relative group inline-block">
                   ESSENTIALS
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-black transform scale-x-0 transition-transform duration-200 group-hover:scale-x-100"></span>
                 </a>
-                <a href="#" className="text-sm hover:text-gray-600">
-                  WEARABLE
+                <a href="#" className="text-sm relative group inline-block">
+                  ATHLETICS
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-black transform scale-x-0 transition-transform duration-200 group-hover:scale-x-100"></span>
                 </a>
                 <div className="flex items-center space-x-4 pt-2">
                   <Search className="w-5 h-5" />
