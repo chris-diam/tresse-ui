@@ -15,7 +15,7 @@ const ProductCard = ({ title, price, category, imageUrl }) => {
           alt={title}
           className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
           onError={(e) => {
-            e.target.src = "/api/placeholder/400/400";
+            e.target.src = "https://placehold.co/400x400?text=No+Image"; // Better placeholder
             e.target.onerror = null;
           }}
         />

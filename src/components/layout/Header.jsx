@@ -28,7 +28,7 @@ const Header = () => {
             </a>
           </nav>
 
-          <h1 className="text-xl font-medium">Tressé</h1>
+          <img src="/logo.png" alt="Tressé" className="h-8 w-auto" />
 
           <div className="flex items-center space-x-6">
             <Search className="w-5 h-5 cursor-pointer" />
@@ -51,7 +51,7 @@ const Header = () => {
               )}
             </button>
 
-            <h1 className="text-lg font-medium">Tressé</h1>
+            <img src="/logo.png" alt="Tressé" className="h-6 w-auto" />
 
             <div className="flex items-center space-x-4">
               <ShoppingBag className="w-5 h-5" />

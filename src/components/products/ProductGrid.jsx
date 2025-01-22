@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
 
 // Create a constant for the API URL
-const API_URL = import.meta.env.VITE_API_URL || "http://160.40.54.205:5000";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const ProductGrid = () => {
   const [products, setProducts] = useState([]);
@@ -54,7 +54,7 @@ const ProductGrid = () => {
           <ProductCard
             key={product._id}
             {...product}
-            imageUrl={`${API_URL}${product.imageUrl}`}
+            imageUrl={product.imageUrl}
           />
         ))}
       </div>
