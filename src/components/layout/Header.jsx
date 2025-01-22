@@ -25,7 +25,7 @@ const Header = () => {
            </a>
          </nav>
 
-         <img src={logo} alt="Tressé" className="h-12 w-auto" />
+         <img src={logo} alt="Tressé" className="h-20 w-auto" />
 
          <div className="flex items-center space-x-6">
            <Search className="w-5 h-5 cursor-pointer" />

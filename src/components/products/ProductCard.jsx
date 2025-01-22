@@ -1,14 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { useNavigate } from 'react-router-dom';
 
-const ProductCard = ({ title, price, category, imageUrl }) => {
-  // Capitalize only first letter of title
+
+const ProductCard = ({ _id,title, price, category, imageUrl }) => {
+  
+  const navigate = useNavigate();
+
+
   const formatTitle = (text) => {
     return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
   };
 
   return (
-    <div className="flex flex-col group">
+    <div className="flex flex-col group" onClick={() => navigate(`/product/${_id}`)}>
       <div className="bg-gray-50 aspect-square w-full overflow-hidden rounded-sm">
         <img
           src={imageUrl}
