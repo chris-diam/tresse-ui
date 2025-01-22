@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ShoppingBag, Search, User, Menu, X } from "lucide-react";
+import logo from "../../assets/tresse.png";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -12,7 +13,7 @@ const Header = () => {
     <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
       <div className="max-w-[2000px] mx-auto">
         {/* Desktop Header */}
-        <div className="hidden md:flex justify-between items-center h-16 px-4 sm:px-6 lg:px-8">
+        <div className="hidden md:flex justify-between items-center h-20 px-4 sm:px-6 lg:px-8">
           <nav className="flex space-x-8">
             <a href="#" className="text-sm relative group">
               CLOTHING
@@ -22,13 +23,9 @@ const Header = () => {
               ESSENTIALS
               <span className="absolute bottom-0 left-0 w-full h-0.5 bg-black transform scale-x-0 transition-transform duration-200 group-hover:scale-x-100"></span>
             </a>
-            <a href="#" className="text-sm relative group">
-              ATHLETICS
-              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-black transform scale-x-0 transition-transform duration-200 group-hover:scale-x-100"></span>
-            </a>
           </nav>
 
-          <img src="/logo.png" alt="Tressé" className="h-8 w-auto" />
+          <img src={logo} alt="Tressé" className="h-20 w-auto" />
 
           <div className="flex items-center space-x-6">
             <Search className="w-5 h-5 cursor-pointer" />
@@ -42,7 +39,7 @@ const Header = () => {
 
         {/* Mobile Header */}
         <div className="md:hidden">
-          <div className="flex justify-between items-center h-16 px-4">
+          <div className="flex justify-between items-center h-20 px-4">
             <button onClick={toggleMobileMenu} className="text-gray-600">
               {isMobileMenuOpen ? (
                 <X className="w-6 h-6" />
@@ -51,7 +48,7 @@ const Header = () => {
               )}
             </button>
 
-            <img src="/logo.png" alt="Tressé" className="h-6 w-auto" />
+            <img src={logo} alt="Tressé" className="h-10 w-auto" />
 
             <div className="flex items-center space-x-4">
               <ShoppingBag className="w-5 h-5" />
