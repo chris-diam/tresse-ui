@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { useCart } from '../../context/CartContext';
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -7,20 +8,26 @@ const ProductPage = () => {
   const [product, setProduct] = useState(null);
   const [selectedSize, setSelectedSize] = useState('');
   const { id } = useParams();
+  const { addToCart } = useCart();
 
   useEffect(() => {
     const fetchProduct = async () => {
-      try {
-        const response = await fetch(`${API_URL}/api/products/${id}`);
-        const data = await response.json();
-        setProduct(data);
-      } catch (error) {
-        console.error('Error:', error);
-      }
+      const response = await fetch(`${API_URL}/api/products/${id}`);
+      const data = await response.json();
+      setProduct(data);
     };
     fetchProduct();
   }, [id]);
 
+  const handleAddToCart = () => {
+    console.log('Add to cart clicked', { product, selectedSize });
+    if (!selectedSize) {
+      console.log('No size selected');
+      return;
+    }
+    addToCart(product, selectedSize);
+    console.log('Product added to cart');
+  };
   if (!product) return null;
 
   return (
@@ -53,7 +60,9 @@ const ProductPage = () => {
         </div>
 
         <button 
-          className="w-full bg-gray-900 text-white py-3 hover:bg-gray-800 transition-colors"
+          onClick={handleAddToCart}
+          disabled={!selectedSize}
+          className="w-full bg-gray-900 text-white py-3 hover:bg-gray-800 transition-colors disabled:bg-gray-400"
         >
           ADD TO CART
         </button>
@@ -62,11 +71,6 @@ const ProductPage = () => {
           <div>
             <h3 className="text-sm font-medium">DETAILS</h3>
             <p className="text-sm mt-2">{product.description}</p>
-          </div>
-          
-          <div>
-            <h3 className="text-sm font-medium">SHIPPING POLICY</h3>
-            <p className="text-sm mt-2">Free shipping on orders over €50</p>
           </div>
         </div>
       </div>
