@@ -13,7 +13,7 @@ const ProductCard = ({ _id,title, price, category, imageUrl }) => {
   };
 
   return (
-    <div className="flex flex-col group" onClick={() => navigate(`/product/${_id}`)}>
+    <div className="flex flex-col group cursor-pointer" onClick={() => navigate(`/product/${_id}`)}>
       <div className="bg-gray-50 aspect-square w-full overflow-hidden rounded-sm">
         <img
           src={imageUrl}
