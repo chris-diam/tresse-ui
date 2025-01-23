@@ -32,17 +32,33 @@ const StripeCheckout = ({ clientSecret }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <CardElement />
-      {error && <div className="text-red-500 mt-2">{error}</div>}
-      <button
-        type="submit"
-        disabled={!stripe || processing}
-        className="bg-black text-white mt-4 py-2 px-4 rounded"
-      >
-        {processing ? "Processing..." : "Pay"}
-      </button>
-    </form>
+    <form onSubmit={handleSubmit} className="space-y-6">
+     <div className="p-4 border rounded">
+       <CardElement 
+         options={{
+           style: {
+             base: {
+               fontSize: '16px',
+               color: '#a47764',
+               '::placeholder': {
+                 color: '#e4c7b8',
+               },
+             },
+           },
+         }}
+       />
+     </div>
+     
+     {error && <div className="text-red-500 text-sm">{error}</div>}
+     
+     <button
+       type="submit"
+       disabled={!stripe || processing}
+       className="w-full bg-black text-white py-3 uppercase text-sm hover:bg-gray-900 disabled:bg-gray-400"
+     >
+       {processing ? "Processing..." : "Pay"}
+     </button>
+   </form>
   );
 };
 

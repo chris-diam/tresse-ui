@@ -86,12 +86,12 @@ const Cart = ({ isOpen, onClose }) => {
             </div>
             <span className="text-sm">€{shippingCost.toFixed(2)}</span>
           </div>
-          <button
-            onClick={handleCheckout}
-            className="w-full bg-black text-white py-3 mb-2 uppercase text-sm"
-          >
-            Checkout
-          </button>
+          <button 
+  onClick={() => navigate('/checkout')}
+  className="w-full bg-black text-white py-3 mb-2 uppercase text-sm"
+>
+  Checkout
+</button>
           <button
             onClick={onClose}
             className="w-full bg-black text-white py-3 uppercase text-sm"
