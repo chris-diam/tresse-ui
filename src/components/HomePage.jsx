@@ -38,7 +38,7 @@ const HomePage = () => {
        ))}
        
        <div className="absolute inset-0 flex flex-col items-center justify-center">
-         <h1 className="text-[#9a8b4e] text-8xl mb-8 tracking-wider">Elevated Modern Classics</h1>
+         <h1 className="text-[#9a8b4e] text-9xl mb-8 tracking-wider">Elevated Modern Classics</h1>
          <button
            onClick={() => navigate('/products')}
            className="text-[#9a8b4e] text-sm border border-[#9a8b4e] px-16 py-2 

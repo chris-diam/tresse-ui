@@ -10,7 +10,7 @@ const Cart = ({ isOpen, onClose }) => {
   const total = subtotal + shippingCost;
 
   return (
-    <div className={`fixed right-0 top-0 h-full w-[400px] bg-white transform transition-transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} z-50`}>
+    <div className={`fixed right-0 top-0 h-full w-[400px] bg-[#f0f0e5] transform transition-transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} z-50`}>
       <div className="h-full flex flex-col">
         <div className="flex justify-between items-center p-4 border-b">
           <h2 className="text-sm uppercase">Shopping Cart</h2>

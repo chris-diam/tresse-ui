@@ -31,7 +31,7 @@ const ProductPage = () => {
   if (!product) return null;
 
   return (
-    <div className="max-w-[2000px] mx-auto px-4 py-8 flex flex-col md:flex-row gap-8">
+    <div className="max-w-[2000px] mx-auto  px-4 py-8 flex flex-col md:flex-row gap-8">
       <div className="md:w-2/3">
         <img 
           src={product.imageUrl} 

@@ -78,10 +78,10 @@ const ProductGrid = () => {
   }
 
   return (
-    <div className="py-4 sm:py-6 lg:py-8">
+    <div className="py-4 sm:py-6 lg:py-8 ">
       <div className="flex justify-end items-center mb-4 sm:mb-6 pt-12">
         
-        <button className="text-sm bg-white text-gray-500 px-3 py-1 sm:px-4 sm:py-2 rounded">
+        <button className="text-sm bg-[#f0f0e5] text-gray-500 px-3 py-1 sm:px-4 sm:py-2 rounded">
           FILTER +
         </button>
       </div>
