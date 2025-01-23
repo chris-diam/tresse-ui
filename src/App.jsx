@@ -8,6 +8,7 @@ import AdminLogin from './components/admin/AdminLogin';
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from './components/ProtectedRoute'
 import AdminDashboard from "./components/admin/AdminDashboard";
+import HomePage from "./components/HomePage";
 
 const App = () => {
   return (
@@ -15,8 +16,8 @@ const App = () => {
       <AuthProvider>
         <CartProvider>
           <Routes>
-            <Route path="/" element={<Layout><ProductGrid /></Layout>} />
-            <Route path="/product/:id" element={<Layout><ProductPage /></Layout>} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/products" element={<Layout><ProductGrid /></Layout>} />            <Route path="/product/:id" element={<Layout><ProductPage /></Layout>} />
             <Route path="/admin" element={<AdminLogin />} />
             <Route path="/admin/dashboard" element={
               <ProtectedRoute>

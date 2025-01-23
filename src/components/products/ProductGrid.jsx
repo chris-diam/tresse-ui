@@ -79,11 +79,9 @@ const ProductGrid = () => {
 
   return (
     <div className="py-4 sm:py-6 lg:py-8">
-      <div className="flex justify-between items-center mb-4 sm:mb-6">
-        <h2 className="text-lg sm:text-xl font-medium">
-          Products ({products.length})
-        </h2>
-        <button className="text-sm bg-black text-white px-3 py-1 sm:px-4 sm:py-2 rounded">
+      <div className="flex justify-end items-center mb-4 sm:mb-6 pt-12">
+        
+        <button className="text-sm bg-white text-gray-500 px-3 py-1 sm:px-4 sm:py-2 rounded">
           FILTER +
         </button>
       </div>
