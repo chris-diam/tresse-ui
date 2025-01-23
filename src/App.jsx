@@ -9,6 +9,7 @@ import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import AdminDashboard from "./components/admin/AdminDashboard";
 import HomePage from "./components/HomePage";
+import CheckoutPage from "./components/CheckoutPage";
 
 const App = () => {
   return (
@@ -40,6 +41,14 @@ const App = () => {
                 <ProtectedRoute>
                   <AdminDashboard />
                 </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/checkout"
+              element={
+                <Layout>
+                  <CheckoutPage />
+                </Layout>
               }
             />
           </Routes>

@@ -1,5 +1,7 @@
 // components/cart/Cart.jsx
 import { useCart } from "../../context/CartContext";
+import { useNavigate } from "react-router-dom";
+
 import { Plus, Minus } from "lucide-react";
 
 const Cart = ({ isOpen, onClose }) => {
@@ -8,6 +10,13 @@ const Cart = ({ isOpen, onClose }) => {
   const subtotal = cart.reduce((sum, item) => sum + parseFloat(item.price), 0);
   const shippingCost = 11.0;
   const total = subtotal + shippingCost;
+
+  const navigate = useNavigate();
+
+  const handleCheckout = () => {
+    navigate("/checkout");
+    onClose();
+  };
 
   return (
     <div
@@ -77,7 +86,10 @@ const Cart = ({ isOpen, onClose }) => {
             </div>
             <span className="text-sm">€{shippingCost.toFixed(2)}</span>
           </div>
-          <button className="w-full bg-black text-white py-3 mb-2 uppercase text-sm">
+          <button
+            onClick={handleCheckout}
+            className="w-full bg-black text-white py-3 mb-2 uppercase text-sm"
+          >
             Checkout
           </button>
           <button
