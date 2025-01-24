@@ -3,12 +3,15 @@ import { useState, useEffect } from "react";
 import bg1 from "../assets/bg1.jpg";
 import bg2 from "../assets/bg2.jpg";
 import bg3 from "../assets/bg3.jpg";
+import blackShirt from "../assets/black-shirt.jpg"
+import blackShirt2 from "../assets/black-shirt2.jpg"
+import blackShirt3 from "../assets/black-shirt3.jpg"
 import Header from "./layout/Header";
 
 const HomePage = () => {
   const navigate = useNavigate();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const images = [bg1, bg2, bg3];
+  const images = [blackShirt, blackShirt2, blackShirt3];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -38,10 +41,9 @@ const HomePage = () => {
 
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4 md:px-8">
           <h1
-            className="text-[#9a8b4e] text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl 
+            className="text-[#9a8b4e] text-4xl select-none sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl 
             mb-4 sm:mb-6 md:mb-8 tracking-wider text-center"
           >
-            Elevated Modern Classics
           </h1>
           <button
             onClick={() => navigate("/products")}
